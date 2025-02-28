@@ -1,25 +1,48 @@
 import React from "react";
-import Navbar from "./component/Navbar";
+import AppLayout from "./components/Layout/AppLayout";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/about";
-import Service from "./pages/service";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Country from "./pages/Country";
+import ErrorPage from "./pages/ErrorPage";
+import CountryDetails from "./components/Layout/CountryDetails";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
 
+      {
+        path: "about",
+        element: <About />,
+      },
+
+      {
+        path: "Contact",
+        element: <Contact />,
+      },
+
+      {
+        path:"country/:id",
+        element: <CountryDetails/>
+      },
+
+      {
+        path: "Country",
+        element: <Country />,
+      },
+    ],
+  },
+]);
 const App = () => {
-  return (
-    <div>
-      <BrowserRouter>
-      <Navbar />
-        <Routes> 
-          <Route path="/" element = {<Home></Home>}></Route>
-          <Route path="/about" element = {<About></About>}></Route>
-          <Route path="/service" element = {<Service></Service>}></Route>
-          <Route path="/contact" element = {<Contact></Contact>}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 };
 
 export default App;
