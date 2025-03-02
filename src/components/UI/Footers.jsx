@@ -62,7 +62,7 @@ const Footers = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contact">Contact</NavLink>
+                  <NavLink to="/contact">FeedBack</NavLink>
 
                 </li>
               </ul>
