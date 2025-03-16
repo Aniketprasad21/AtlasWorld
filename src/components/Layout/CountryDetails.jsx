@@ -48,7 +48,7 @@ const CountryDetails = () => {
   
                 <div className="infoContainer">
                   <p>
-                    <span className="card-description"> Native Names:</span>
+                    <span className="card-description"> Native Names: </span>
                     {Object.keys(country.name.nativeName)
                       .map((key) => country.name.nativeName[key].common)
                       .join(", ")}
@@ -58,20 +58,20 @@ const CountryDetails = () => {
                     {country.population.toLocaleString()}
                   </p>
                   <p>
-                    <span className="card-description"> Region:</span>
+                    <span className="card-description"> Region: </span>
                     {country.region}
                   </p>
                   <p>
-                    <span className="card-description"> Sub Region:</span>
+                    <span className="card-description"> Sub Region: </span>
                     {country.subregion}
                   </p>
                   <p>
-                    <span className="card-description"> Capital:</span>
+                    <span className="card-description"> Capital: </span>
                     {country.capital}
                   </p>
   
                   <p>
-                    <span className="card-description">Top Level Domain:</span>
+                    <span className="card-description">Top Level Domain: </span>
                     {country.tld[0]}
                   </p>
                   <p>
